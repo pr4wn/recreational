@@ -46,8 +46,8 @@ for my $i ( 0 .. $#tickets ) {
 
     @a = sort { $a <=> $b } (@a);
 
-    for my $j ( 0 .. 5 ) {
+    for my $j ( 0 .. 4 ) {
         printf "%02d ", ( $a[$j] );
     }
-    print "\n";
+    printf "%02d\n", ( $a[5] );
 }
