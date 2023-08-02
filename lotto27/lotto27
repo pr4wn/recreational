@@ -6,7 +6,7 @@ use List::Util qw/shuffle/;
 
 my @balls = ( 1 .. 59 );
 
-@balls = shuffle(@balls);
+@balls = shuffle @balls;
 
 my @tickets = (
     [ 1,  2,  3,  4,  5,  6 ],
@@ -44,10 +44,10 @@ for my $i ( 0 .. $#tickets ) {
         push @a, $balls[ $tickets[$i][$j] - 1 ];
     }
 
-    @a = sort { $a <=> $b } (@a);
+    @a = sort { $a <=> $b } @a;
 
     for my $j ( 0 .. 4 ) {
-        printf "%02d ", ( $a[$j] );
+        printf "%02d ", $a[$j];
     }
-    printf "%02d\n", ( $a[5] );
+    printf "%02d\n", $a[5];
 }
