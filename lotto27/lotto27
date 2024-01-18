@@ -38,6 +38,8 @@ my @tickets = (
     [ 54, 55, 56, 57, 58, 59 ]
 );
 
+@tickets = shuffle @tickets;
+
 for my $i ( 0 .. $#tickets ) {
     my @a;
     for my $j ( 0 .. 5 ) {
@@ -49,5 +51,11 @@ for my $i ( 0 .. $#tickets ) {
     for my $j ( 0 .. 4 ) {
         printf "%02d ", $a[$j];
     }
+
     printf "%02d\n", $a[5];
+
+    if ($i % 7 == 6 ) {
+        print "#\n";
+    } 
+    
 }
