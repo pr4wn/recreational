@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+
 use strict;
 use warnings;
 
@@ -9,9 +10,10 @@ my @balls = ( 1 .. 59 );
 @balls = shuffle @balls;
 
 my @tickets = (
-    [ 1,  2,  3,  4,  5,  6 ],
-    [ 1,  2,  3,  4,  7,  8 ],
-    [ 1,  2,  5,  6,  7,  8 ],
+
+    [ 1,  2,  3,  4,  5,  6  ],
+    [ 1,  2,  3,  4,  7,  8  ],
+    [ 1,  2,  5,  6,  7,  8  ],
     [ 9,  10, 11, 12, 13, 14 ],
     [ 9,  10, 11, 15, 16, 17 ],
     [ 12, 13, 14, 15, 16, 17 ],
@@ -36,12 +38,15 @@ my @tickets = (
     [ 48, 49, 52, 53, 58, 59 ],
     [ 50, 51, 52, 53, 54, 55 ],
     [ 54, 55, 56, 57, 58, 59 ]
+
 );
 
 @tickets = shuffle @tickets;
 
 for my $i ( 0 .. $#tickets ) {
+
     my @a;
+    
     for my $j ( 0 .. 5 ) {
         push @a, $balls[ $tickets[$i][$j] - 1 ];
     }
@@ -54,7 +59,7 @@ for my $i ( 0 .. $#tickets ) {
 
     printf "%02d\n", $a[5];
 
-    if ($i % 7 == 6 ) {
+    if ( $i % 7 == 6 ) {
         print "#\n";
     } 
     
