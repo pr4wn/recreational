@@ -59,7 +59,7 @@ for my $i ( 0 .. $#tickets ) {
 
     printf "%02d\n", $a[5];
 
-    if ( $i % 7 == 6 ) {
+    if ( $i % 5 == 4 ) {
         print "#\n";
     } 
     
