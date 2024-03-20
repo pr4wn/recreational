@@ -5,7 +5,7 @@ use warnings;
 
 use List::Util qw/shuffle/;
 
-my @balls = ( 1 .. 59 );
+my @balls = (1..59);
 
 @balls = shuffle @balls;
 
@@ -43,23 +43,23 @@ my @tickets = (
 
 @tickets = shuffle @tickets;
 
-for my $i ( 0 .. $#tickets ) {
+for my $i (0..$#tickets) {
 
     my @a;
     
-    for my $j ( 0 .. 5 ) {
-        push @a, $balls[ $tickets[$i][$j] - 1 ];
+    for my $j (0..5) {
+        push @a, $balls[$tickets[$i][$j] - 1];
     }
 
-    @a = sort { $a <=> $b } @a;
+    @a = sort {$a<=>$b} @a;
 
-    for my $j ( 0 .. 4 ) {
+    for my $j (0..4) {
         printf "%02d ", $a[$j];
     }
 
     printf "%02d\n", $a[5];
 
-    if ( $i % 5 == 4 ) {
+    if ($i %5 == 4) {
         print "#\n";
     } 
     
