@@ -4,6 +4,7 @@ use strict;
 use warnings;
 
 use List::Util qw/shuffle/;
+use File::Basename;
 
 my @balls = (1..59);
 
@@ -41,6 +42,7 @@ my @tickets = (
 
 );
 
+my $fn = basename($0);
 @tickets = shuffle @tickets;
 
 for my $i (0..$#tickets) {
@@ -57,10 +59,15 @@ for my $i (0..$#tickets) {
         printf "%02d ", $a[$j];
     }
 
-    printf "%02d\n", $a[5];
+    if ($i %5 == 0 ) {
+        printf "%02d # $fn \n", $a[5]} 
+    else {
+        printf "%02d\n", $a[5]}
 
     if ($i %5 == 4) {
         print "#\n";
     } 
     
 }
+
+print "#\n";
