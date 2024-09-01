@@ -43,6 +43,7 @@ my @tickets = (
 );
 
 my $fn = basename($0);
+
 @tickets = shuffle @tickets;
 
 for my $i (0..$#tickets) {
@@ -50,22 +51,33 @@ for my $i (0..$#tickets) {
     my @a;
     
     for my $j (0..5) {
+
         push @a, $balls[$tickets[$i][$j] - 1];
+
     }
 
     @a = sort {$a<=>$b} @a;
 
     for my $j (0..4) {
+
         printf "%02d ", $a[$j];
+
     }
 
     if ($i %5 == 0 ) {
-        printf "%02d # $fn \n", $a[5]} 
-    else {
-        printf "%02d\n", $a[5]}
+
+        printf "%02d # $fn \n", $a[5]
+
+    } else {
+
+        printf "%02d\n", $a[5]
+
+    }
 
     if ($i %5 == 4) {
+
         print "#\n";
+
     } 
     
 }
